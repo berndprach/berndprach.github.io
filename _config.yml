@@ -25,9 +25,9 @@ author:
   name             : "Bernd Prach"
   pronouns         : # example: "she/her"  
   bio              : "I am a 5th year PhD Student interested in Interpretability and Robustness in Computer Vision."
-  location         : # "Earth"
+  location         : "Vienna, Austria"
   employer         : "ISTA"
-  uri              : # URL
+  uri              : "https://ista.ac.at/en/home/"
   email            : "bprach@ist.ac.at" 
 
   # Academic websites
