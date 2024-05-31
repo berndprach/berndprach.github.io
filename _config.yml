@@ -27,7 +27,7 @@ author:
   bio              : "I am a 5th year PhD Student interested in Interpretability and Robustness in Computer Vision."
   location         : "Vienna, Austria"
   employer         : "ISTA"
-  uri              : "https://ista.ac.at/en/home/"
+  uri              : # "https://ista.ac.at/en/home/"
   email            : "bprach@ist.ac.at" 
 
   # Academic websites
