@@ -10,12 +10,13 @@ paperurl: 'https://arxiv.org/abs/2311.16833'
 citation: 'Prach, Bernd, Fabio Brau, Giorgio Buttazzo, and Christoph H. Lampert. "1-Lipschitz Layers Compared: Memory, Speed, and Certifiable Robustness." arXiv preprint arXiv:2311.16833 (2023).'
 ---
 
-<img src="https://github.com/berndprach/berndprach.github.io/blob/master/images/star_plot_line.png" alt="Radar plot of results" width="800"/>
+<img src="/images/star_plot_line.png" alt="Radar plot of results" width="1200"/>
 
 
 ## Links:
-- [GitHub](https://github.com/berndprach/1LipschitzLayersCompared)
 - [ArXiv](https://arxiv.org/abs/2311.16833)
+- [GitHub](https://github.com/berndprach/1LipschitzLayersCompared)
+- [Poster](https://drive.google.com/file/d/1774juF7XtxgJTUi8g0a8B8sH8AuSvRj7/view?usp=sharing)
 
 ## Abstract:
 The robustness of neural networks against input perturbations with bounded magnitude represents a serious concern 
