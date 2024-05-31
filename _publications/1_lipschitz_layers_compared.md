@@ -2,7 +2,7 @@
 title: "1-Lipschitz Layers Compared: Memory, Speed and Certifiable Robustness"
 collection: publications
 permalink: /publication/1LipschitzLayersCompared
-excerpt: 'We compare existing of creating 1-Lipschitz convolutions.'
+excerpt: 'We compare existing methods of creating 1-Lipschitz convolutions, analysing them both theoretically as well as experimentally.'
 date: 2024-06-20
 venue: 'CVPR'
 slidesurl: 'http://berndprach.github.io/files/slides1.pdf'
