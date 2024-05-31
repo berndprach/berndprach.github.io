@@ -24,7 +24,7 @@ author:
   avatar           : "profile.jpg"
   name             : "Bernd Prach"
   pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
+  bio              : "I am a 5th year PhD Student interested in Interpretability and Robustness in Computer Vision."
   location         : # "Earth"
   employer         : "ISTA"
   uri              : # URL
