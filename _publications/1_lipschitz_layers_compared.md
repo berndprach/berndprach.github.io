@@ -10,7 +10,8 @@ paperurl: 'https://arxiv.org/abs/2311.16833'
 citation: 'Prach, B., Brau, F., Buttazzo, G., & Lampert, C. H. (2023). 1-Lipschitz Layers Compared: Memory, Speed, and Certifiable Robustness. arXiv preprint arXiv:2311.16833.'
 ---
 
-<img src="https://github.com/berndprach/berndprach.github.io/blob/master/images/star_plot_line.pdf" alt="Radar plot of results" width="800"/>
+<img src="https://github.com/berndprach/berndprach.github.io/blob/master/images/star_plot_line.png" alt="Radar plot of results" width="800"/>
+
 
 ## Links:
 - [GitHub](https://github.com/berndprach/1LipschitzLayersCompared)
