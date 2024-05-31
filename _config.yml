@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Bernd Prach / Site Title"
+title                    : "Bernd Prach"
 title_separator          : "-"
 name                     : &name "Bernd Prach"
 description              : &description "personal description"
