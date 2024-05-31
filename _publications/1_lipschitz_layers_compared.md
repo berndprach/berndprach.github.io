@@ -10,4 +10,16 @@ paperurl: 'https://arxiv.org/abs/2311.16833'
 citation: 'Prach, B., Brau, F., Buttazzo, G., & Lampert, C. H. (2023). 1-Lipschitz Layers Compared: Memory, Speed, and Certifiable Robustness. arXiv preprint arXiv:2311.16833.'
 ---
 
-The contents above will be part of a list of publications, if the user clicks the link for the publication than the contents of section will be rendered as a full page, allowing you to provide more information about the paper for the reader. When publications are displayed as a single page, the contents of the above "citation" field will automatically be included below this section in a smaller font.
+**Abstract**
+The robustness of neural networks against input perturbations with bounded magnitude represents a serious concern 
+in the deployment of deep learning models in safety-critical systems. Recently, the scientific community has 
+focused on enhancing certifiable robustness guarantees by crafting 1-Lipschitz neural networks that leverage 
+Lipschitz bounded dense and convolutional layers. Different methods have been proposed in the literature to 
+achieve this goal, however, comparing the performance of such methods is not straightforward, since different 
+metrics can be relevant (e.g., training time, memory usage, accuracy, certifiable robustness) for different 
+applications. Therefore, this work provides a thorough comparison between different methods, covering theoretical 
+aspects such as computational complexity and memory requirements, as well as empirical measurements of time per 
+epoch, required memory, accuracy and certifiable robust accuracy. The paper also provides some guidelines and 
+recommendations to support the user in selecting the methods that work best depending on the available resources. 
+We provide code at [github.com/berndprach/1LipschitzLayersCompared](https://github.com/berndprach/1LipschitzLayersCompared).
+
