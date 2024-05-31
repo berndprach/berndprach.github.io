@@ -5,7 +5,6 @@ permalink: /publication/1LipschitzLayersCompared
 excerpt: 'We compare existing methods of creating 1-Lipschitz convolutions, analysing them both theoretically as well as experimentally.'
 date: 2024-06-20
 venue: 'CVPR'
-slidesurl: 'http://berndprach.github.io/files/slides1.pdf'
 paperurl: 'https://arxiv.org/abs/2311.16833'
 citation: 'Prach, Bernd, Fabio Brau, Giorgio Buttazzo, and Christoph H. Lampert. "1-Lipschitz Layers Compared: Memory, Speed, and Certifiable Robustness." arXiv preprint arXiv:2311.16833 (2023).'
 ---
