@@ -12,3 +12,4 @@ citation: 'Prach, Bernd, and Christoph H. Lampert. "Almost-orthogonal layers for
 ## Links:
 - [ArXiv](https://arxiv.org/abs/2208.03160)
 - [GitHub](https://github.com/berndprach/AOL)
+- [Poster](https://drive.google.com/file/d/1xhmpanWHMzIVXgK6J07FOGTgbNdYkD3P/view?usp=sharing)
