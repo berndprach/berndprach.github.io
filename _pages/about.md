@@ -12,4 +12,4 @@ at the [Institute of Science and Technology Austria](https://www.ist.ac.at/home)
 supervised by [Christoph Lampert](https://cvml.ista.ac.at/).
 
 I am interested in interpretability and robustness in Computer Vision.
-I'm currently working on certifiably robustess, using 1-Lipschitz networks.
+I'm currently working on certifiably robust models, and try to improve various aspects of 1-Lipschitz networks.
