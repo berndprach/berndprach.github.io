@@ -17,5 +17,5 @@ I'm currently working on certifiably robust models, and try to improve various a
 Find me on 
 [GitHub](https://github.com/berndprach),
 [Google Scholar](https://scholar.google.com/citations?user=m5ZzcLEAAAAJ),
-[LinkedIn](www.linkedin.com/in/bernd-prach) and
+[LinkedIn](https://www.linkedin.com/in/bernd-prach) and
 [YouTube](http://www.youtube.com/@berndprach).
