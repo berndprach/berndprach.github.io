@@ -1,7 +1,7 @@
 ---
 title: "1-Lipschitz Neural Networks are more expressive with N-Activations"
 collection: publications
-permalink: /publication/1LipschitzLayersCompared
+permalink: /publication/NActivation
 excerpt: 'We show a shortcoming with currently popular activation functions in 1-Lipschitz networks, both empirically and experimentally. Then we propose an activation function that provably overcomes this limitation.'
 date: 2023-11-10
 venue: 'arXiv'
