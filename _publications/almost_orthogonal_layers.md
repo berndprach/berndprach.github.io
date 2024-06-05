@@ -6,7 +6,7 @@ excerpt: 'We introduce a rescaling-based parameterization that guarantees linear
 date: 2022-08-05
 venue: 'ECCV'
 paperurl: 'https://arxiv.org/pdf/2208.03160'
-citation: 'Prach, Bernd, and Christoph H. Lampert. "Almost-orthogonal layers for efficient general-purpose lipschitz networks." In ECCV, 2022.'
+# citation: 'Prach, Bernd, and Christoph H. Lampert. "Almost-orthogonal layers for efficient general-purpose lipschitz networks." In ECCV, 2022.'
 ---
 
 ## Links:

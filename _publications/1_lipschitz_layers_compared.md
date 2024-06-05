@@ -6,7 +6,7 @@ excerpt: 'We compare existing methods of creating 1-Lipschitz convolutions, anal
 date: 2024-06-20
 venue: 'CVPR'
 paperurl: 'https://arxiv.org/abs/2311.16833'
-citation: 'Prach, Bernd, Fabio Brau, Giorgio Buttazzo, and Christoph H. Lampert. "1-Lipschitz Layers Compared: Memory, Speed, and Certifiable Robustness." arXiv preprint arXiv:2311.16833 (2023).'
+# citation: 'Prach, Bernd, Fabio Brau, Giorgio Buttazzo, and Christoph H. Lampert. "1-Lipschitz Layers Compared: Memory, Speed, and Certifiable Robustness." arXiv preprint arXiv:2311.16833 (2023).'
 ---
 
 <img src="/images/star_plot_line.png" alt="Radar plot of results" width="1200"/>
