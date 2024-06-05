@@ -6,7 +6,7 @@ excerpt: 'We show a shortcoming with currently popular activation functions in 1
 date: 2023-11-10
 venue: 'arXiv'
 paperurl: 'https://arxiv.org/pdf/2311.06103'
-citation: 'Prach, Bernd, and Christoph H. Lampert. "1-Lipschitz Neural Networks are more expressive with N-Activations." arXiv preprint arXiv:2311.06103 (2023).'
+# citation: 'Prach, Bernd, and Christoph H. Lampert. "1-Lipschitz Neural Networks are more expressive with N-Activations." arXiv preprint arXiv:2311.06103 (2023).'
 ---
 
 <img src="/images/n_activation.png" alt="Radar plot of results" width="400"/>
