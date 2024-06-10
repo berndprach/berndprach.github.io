@@ -19,8 +19,9 @@ paperurl: 'https://arxiv.org/pdf/2311.16833'
 
 
 ## Poster preview:
-<img src="/images/poster.png" alt="Poster" width="1200"/>
-
+<a href="https://drive.google.com/file/d/1774juF7XtxgJTUi8g0a8B8sH8AuSvRj7/view?usp=sharing">
+  <img src="/images/poster.png" alt="Poster" width="1200"/>
+</a>
 
 ## Abstract:
 The robustness of neural networks against input perturbations with bounded magnitude represents a serious concern 
