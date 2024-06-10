@@ -18,7 +18,7 @@ paperurl: 'https://arxiv.org/pdf/2311.16833'
 - [Poster](https://drive.google.com/file/d/1774juF7XtxgJTUi8g0a8B8sH8AuSvRj7/view?usp=sharing)
 
 
-## Poster:
+## Poster preview:
 <img src="/images/poster.png" alt="Poster" width="1200"/>
 
 
