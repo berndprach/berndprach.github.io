@@ -17,6 +17,11 @@ paperurl: 'https://arxiv.org/pdf/2311.16833'
 - [GitHub](https://github.com/berndprach/1LipschitzLayersCompared)
 - [Poster](https://drive.google.com/file/d/1774juF7XtxgJTUi8g0a8B8sH8AuSvRj7/view?usp=sharing)
 
+
+## Poster:
+<img src="/images/poster.png" alt="Poster" width="1200"/>
+
+
 ## Abstract:
 The robustness of neural networks against input perturbations with bounded magnitude represents a serious concern 
 in the deployment of deep learning models in safety-critical systems. Recently, the scientific community has 
