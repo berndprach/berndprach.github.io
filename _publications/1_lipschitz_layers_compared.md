@@ -9,6 +9,8 @@ paperurl: 'https://arxiv.org/pdf/2311.16833'
 # citation: 'Prach, Bernd, Fabio Brau, Giorgio Buttazzo, and Christoph H. Lampert. "1-Lipschitz Layers Compared: Memory, Speed, and Certifiable Robustness." arXiv preprint arXiv:2311.16833 (2023).'
 ---
 
+<meta property="og:image" content="https://berndprach.github.io/images/poster.png" />
+
 <img src="/images/star_plot_line.png" alt="Radar plot of results" width="1200"/>
 
 
