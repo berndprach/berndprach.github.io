@@ -11,7 +11,7 @@ paperurl: 'https://arxiv.org/pdf/2208.03160'
 
 ## Links:
 - [ArXiv](https://arxiv.org/abs/2208.03160)
-- [GitHub](https://github.com/berndprach/AOL)
+- [Code](https://github.com/berndprach/AOL)
 - [Poster](https://drive.google.com/file/d/1xhmpanWHMzIVXgK6J07FOGTgbNdYkD3P/view?usp=sharing)
 - [Video](https://youtu.be/9S68CbdaPQ8?si=tYKVwTYXjS2vxLtz)
 
