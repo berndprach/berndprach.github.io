@@ -14,3 +14,8 @@ paperurl: 'https://arxiv.org/pdf/2208.03160'
 - [GitHub](https://github.com/berndprach/AOL)
 - [Poster](https://drive.google.com/file/d/1xhmpanWHMzIVXgK6J07FOGTgbNdYkD3P/view?usp=sharing)
 - [Video](https://youtu.be/9S68CbdaPQ8?si=tYKVwTYXjS2vxLtz)
+
+## Poster preview:
+<a href="https://drive.google.com/file/d/1xhmpanWHMzIVXgK6J07FOGTgbNdYkD3P/view?usp=sharing">
+  <img src="/images/AOL_Poster.png" alt="Poster" width="1200"/>
+</a>
