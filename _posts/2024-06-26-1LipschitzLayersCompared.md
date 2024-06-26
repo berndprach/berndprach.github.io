@@ -77,10 +77,14 @@ expressing the entries of \\( J^\top J \\) explicitely in terms of the kernel va
 <p style="color:grey;font-size:70%;"> (Q. Li et al., 2019, NeurIPS) </p>
 The methods BCOP (Block Orthogonal Convolution Parameterization) constructs the kernel of a \\( k \times k \\) convolution
 from a set of \\( (2k − 1) \\) parameter matrices. 
-Each of these matrices is orthogonalized using an algorithm by Bjorck & Bowie
-<p style="color:grey;font-size:70%;"> (&#197;. Bj&ouml;rck and C. Bowie, 1971, SIAM Journal on Numerical Analysis) </p>
+Each of these matrices is orthogonalized using an algorithm by Bjorck & Bowie[^2]
 Then, a \\( k \times k \\) kernel is constructed from those matrices in a
 way that guarantees that the resulting layer is orthogonal.
+
+[^2]: &#197;. Bj&ouml;rck and C. Bowie, 1971, SIAM Journal on Numerical Analysis
+
+END
+<p style="color:grey;font-size:70%;"> [1] (&#197;. Bj&ouml;rck and C. Bowie, 1971, SIAM Journal on Numerical Analysis) </p>
 
 ### Citation
 The layers were introduced in the following papers:
