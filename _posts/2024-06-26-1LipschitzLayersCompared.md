@@ -59,7 +59,11 @@ We will introduce 7 methods of creating 1-Lipschitz convolutions from the litera
 
 
 
-## **[AOL]** (Prach and Lampert, 2022, ECCV)
+## AOL (Prach and Lampert, 2022, ECCV)
+<p style="color:grey;font-size:70%;"> (Prach and Lampert, 2022, ECCV) </p>
+
+<span style="font-size: 200%;">**AOL**</span> <span style="font-size: 50%;">(Prach and Lampert, 2022, ECCV)</span>
+
 We introduced Almost Orthogonal Lipschitz (AOL) as a rescaling method that guarantees a layer to be 1-Lipschitz.
 For a fully connected layer with a parameter matrix P, we define a diagonal rescaling matrix D with 
 
@@ -74,18 +78,15 @@ We show how to efficiently evaluate the rescaling (or more precisely an upper bo
 expressing the entries of \\( J^\top J \\) explicitely in terms of the kernel values.
 
 
-[BCOP] Q. Li et al., 2019, NeurIPS; 
-
-[CPL] Meunier et al., 2022, ICML;
-
-[Cayley] Trockman and Kolter, 2021, ICLR; 
-
-[LOT] Xu, L. Li, and B. Li, 2022, NeurIPS; 
-
-[SLL] Araujo et al., 2023, ICLR;
-
-
-[SOC] Singla and Feizi, 2021, ICML;
+### Citation
+The layers were introduced in the following papers:
+- **[AOL]** (Prach and Lampert, 2022, ECCV)
+- **[BCOP]** Q. Li et al., 2019, NeurIPS; 
+- **[CPL]** Meunier et al., 2022, ICML;
+- **[Cayley]** Trockman and Kolter, 2021, ICLR; 
+- **[LOT]** Xu, L. Li, and B. Li, 2022, NeurIPS; 
+- **[SLL]** Araujo et al., 2023, ICLR;
+- **[SOC]** Singla and Feizi, 2021, ICML;
 
 Comparison
 ======
