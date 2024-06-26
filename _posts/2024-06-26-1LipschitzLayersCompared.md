@@ -64,6 +64,9 @@ We will introduce 7 methods of creating 1-Lipschitz convolutions from the litera
 
 <span style="font-size: 200%;">**AOL**</span> <span style="font-size: 50%;">(Prach and Lampert, 2022, ECCV)</span>
 
+<h2 style="display:inline;">AOL</h2>
+<p style="color:grey;font-size:70%;"> (Prach and Lampert, 2022, ECCV) </p>
+  
 We introduced Almost Orthogonal Lipschitz (AOL) as a rescaling method that guarantees a layer to be 1-Lipschitz.
 For a fully connected layer with a parameter matrix P, we define a diagonal rescaling matrix D with 
 
