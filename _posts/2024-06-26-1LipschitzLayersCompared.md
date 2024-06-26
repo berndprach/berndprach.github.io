@@ -47,6 +47,7 @@ Once we know how to build 1-Lipschitz layers, we can simply construct 1-Lipschit
 When classifying an image using a 1-Lipschitz network, by construction, any perturbation of the input image can change the output of the network by at most the same amount. 
 Therefore, if the difference of the larges 2 class scores of the original image is large enough, 
 we can be sure that no perturbation of certain magnitude can change the order of outputs, and therefore the prediction of the model.
+
 <img src="/images/blog-posts/ls_margin.png" alt="Robust Classification" width="400"/>
 
 
