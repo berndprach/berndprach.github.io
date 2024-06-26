@@ -9,7 +9,9 @@ tags:
 
 <img src="/images/star_plot_line.png" alt="Radar plot of results" width="1200"/>
 
-In our recent CVPR paper, "1-Lipschitz Layers Compared: Memory, Speed and Certifiable Robustness” we compared different methods of creating 1-Lipschitz convolutions.
+In our recent CVPR paper, 
+[https://berndprach.github.io/publication/1LipschitzLayersCompared](“1-Lipschitz Layers Compared: Memory, Speed and Certifiable Robustness”)
+ we compared different methods of creating 1-Lipschitz convolutions.
 In this blog post we try to give some additional background on why 1-Lipschitz methods are an interesting research topic, and discuss some results from the paper.
 
 **This post is currently work in progress!**
@@ -53,7 +55,7 @@ we can be sure that no perturbation of certain magnitude can change the order of
 Existing 1-Lipschitz Convolutions
 ======
 Recently, many works have tried to construct 1-Lipschitz layers. It is relatively easy to construct 1-Lipschitz fully connected layers.
-For example we can orthogonalize the weight matrices using a differentiable algorithm such as Bjork and Bowie, or we can divide the outputs of the layer by its operator norm, obtained using power iterations.
+For example we can orthogonalize the weight matrices using a differentiable algorithm such as Bj&ouml;rck and Bowie[^BnB], or we can divide the outputs of the layer by its operator norm, obtained using power iterations.
 However, it is a bit more tricky to create 1-Lipschitz convolutions. For example, whilst we could apply conditions on the Jacobian of the layer, it is generally inpractical because of the size of this matrix.
 
 We will introduce 7 methods of creating 1-Lipschitz convolutions from the literature:
@@ -63,7 +65,7 @@ We will introduce 7 methods of creating 1-Lipschitz convolutions from the litera
 <p style="color:grey;font-size:70%;"> (Li et al., 2019, NeurIPS) </p>
 The methods **BCOP** (*Block Orthogonal Convolution Parameterization*) constructs the kernel of a \\( k \times k \\) convolution
 from a set of \\( (2k − 1) \\) parameter matrices. 
-Each of these matrices is orthogonalized using an algorithm by Bjorck & Bowie[^BnB].
+Each of these matrices is orthogonalized using an algorithm by Bj&ouml;rck & Bowie[^BnB].
 Then, a \\( k \times k \\) kernel is constructed from those matrices in a
 way that guarantees that the resulting layer is orthogonal.
 
@@ -151,15 +153,38 @@ Theoretical
 ------
 In our paper we did a theoretical comparison of different methods, considering the computational complexity and memory requirements of different methods.
 Our main findings where
-- Doing a forward pass with any of the methods is at most a costant factor worse that doing a forward pass with a standard convolution.
+- Doing a forward pass with any of the methods is at most a costant factor more expensive than doing a forward pass with a standard convolution.
 - However, apart from CPL and SOC, all methods require some preprocessing of the parameters (e.g. orthogonalization), that usually scales like \\(c^3\\), for \\(c\\) the number of channels.
 - Methods Cayley and LOT require preprocessing that furthermore depend on the input size, making those methods hard to scale to larger input sizes.
 - In terms of memory required, again Cayley and LOT scale much worse with input size.
 
 Empirical
 ------
+We also compared the different methods in terms of the standard tasks for 1-Lipschitz networks: Certified Robust Classification.
+The certified robust accuracy is the portion of the test set that is classified both correctly as well as robustly: 
+No perturbation of certain magnitude (here \\(\epsilon=36/255\\)) can change the output of the model.
+For 1-Lipschitz networks, if for a particular input the score (=model output) for the ground truth class 
+is at least \\(\sqrt{2} \epsilon\\) higher than the second largest score,
+then this input is classified certifyably robustly by the network.
+So one forward pass per image is enough to evaluate the certified robust accuracy of a model.
 
+When training 1-Lipschitz networks, it is usually the case that the performance keeps increasing when training for longer.
+Also, the time required to process one epoch is very different for different models. Therefore, we decided to restrict the
+training time for every model, and compare them for a given time (and not epoch) budget.
 
+In this comparison, methods CPL and SOC generally performed very well. Despite requiring a lot of resources, a LOT model reached the highest
+certified robust accuracy on Tiny Imagenet. 
+
+For all results and various visualizations of them check out our paper.
+
+Interpretation
+------
+Based on our results, we believe CPL is the most promising method for creating certifiably robust models in the future.
+
+One commonality between well performing methods that we have found is that they all either include some sort of skip connection (CPL, SLL and SOC) or initialize layers as the identity map (like AOL and LOT). We also found that as expected, doing computations on the kernel instead of on the full input is an advantage when scaling up methods to larger input resolutions. Interestingly, we did not find a large difference between layers that strictly enforce orthogonality and more general ones. Furthermore, slower methods did not seem to perform worse than faster ones; with SOC and LOT two relative slow methods are among the best ones
+  
+Please find more information and further details in our paper 
+[https://berndprach.github.io/publication/1LipschitzLayersCompared](“1-Lipschitz Layers Compared: Memory, Speed and Certifiable Robustness”)
 
 ### Citation
 The layers were introduced in the following papers:
