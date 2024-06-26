@@ -82,6 +82,23 @@ $$ Q = (I-A) (I+A)^{-1}. $$
 
 [^Caylay]: Arthur Cayley, 1846, Journal fur die reine und angewandte Mathematik
 
+
+<h2 style="display:inline;">SOC</h2>
+<p style="color:grey;font-size:70%;"> (Singla and Feizi, 2021, ICML) </p>
+Skew orthogonal convolutions (SOC) use an exponential convolution[\exc] in order to obtain a 1-Lipschitz layer:
+Given a kernel \\(K\\), the exponential convolution can be defined as
+
+&& \operatorname(exp)(K)(x) = x + \frac{K \ast x}{1} + \frac{K \ast^2 x}{2!} + \dots + \frac{K \ast^t x}{t!} + \dots, $$
+
+where \\(\ast^t\\) denotes a convolution applied \\(t\\) times.
+The authors proved that any exponential convolution has an orthogonal Jacobian matrix as long as L is skew-symmetric,
+providing a way of parameterizing 1-Lipschitz layers. 
+In their work, the sum of the infinite series is approximated by computing only the first 5 terms during training and the first 12 terms during the inference, 
+and L is normalized to have unitary spectral norm.
+
+[^exc]: Hoogeboom et al., 2020, The convolution exponential and generalized Sylvester flows.
+
+
 <h2 style="display:inline;">AOL</h2>
 <p style="color:grey;font-size:70%;"> (Prach and Lampert, 2022, ECCV) </p>
   
