@@ -80,7 +80,7 @@ For any skew-symmetric matrix \\(A\\) the matrix \\(Q\\) is orthogonal, where \\
 
 $$ Q = (I-A) (I+A)^{-1}. $$
 
-[^Caylay]: Arthur Cayley, 1846, Journal fur die reine und angewandte Mathematik
+[^Cayley]: Arthur Cayley, 1846, Journal fur die reine und angewandte Mathematik
 
 
 <h2 style="display:inline;">SOC</h2>
@@ -88,7 +88,7 @@ $$ Q = (I-A) (I+A)^{-1}. $$
 Skew orthogonal convolutions (SOC) use an exponential convolution[\exc] in order to obtain a 1-Lipschitz layer:
 Given a kernel \\(K\\), the exponential convolution can be defined as
 
-&& \operatorname(exp)(K)(x) = x + \frac{K \ast x}{1} + \frac{K \ast^2 x}{2!} + \dots + \frac{K \ast^t x}{t!} + \dots, $$
+$$ \exp(K)(x) = x + \frac{K \ast x}{1} + \frac{K \ast^2 x}{2!} + \dots + \frac{K \ast^t x}{t!} + \dots, $$
 
 where \\(\ast^t\\) denotes a convolution applied \\(t\\) times.
 The authors proved that any exponential convolution has an orthogonal Jacobian matrix as long as L is skew-symmetric,
