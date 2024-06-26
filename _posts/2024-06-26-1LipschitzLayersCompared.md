@@ -61,7 +61,7 @@ We will introduce 7 methods of creating 1-Lipschitz convolutions from the litera
 
 <h2 style="display:inline;">BCOP</h2>
 <p style="color:grey;font-size:70%;"> (Li et al., 2019, NeurIPS) </p>
-The methods BCOP (Block Orthogonal Convolution Parameterization) constructs the kernel of a \\( k \times k \\) convolution
+The methods **BCOP** (*Block Orthogonal Convolution Parameterization*) constructs the kernel of a \\( k \times k \\) convolution
 from a set of \\( (2k − 1) \\) parameter matrices. 
 Each of these matrices is orthogonalized using an algorithm by Bjorck & Bowie[^BnB].
 Then, a \\( k \times k \\) kernel is constructed from those matrices in a
@@ -73,7 +73,7 @@ way that guarantees that the resulting layer is orthogonal.
 <h2 style="display:inline;">Cayley</h2>
 <p style="color:grey;font-size:70%;"> (Trockman and Kolter, 2021, ICLR) </p>
 
-Cayley Convolutions make use of the fact that circular padded convolutions are vector-matrix products in the Fourier domain.
+*Cayley Convolutions* make use of the fact that circular padded convolutions are vector-matrix products in the Fourier domain.
 As long as all those vector-matrix products have orthogonal matrices, the full convolution will have an orthogonal Jacobian.
 The orthogonal matrices used in this are parameterized using the Cayely Transform[^Cayley]:
 For any skew-symmetric matrix \\(A\\) the matrix \\(Q\\) is orthogonal, where \\(Q\\) is defined as
@@ -85,7 +85,7 @@ $$ Q = (I-A) (I+A)^{-1}. $$
 
 <h2 style="display:inline;">SOC</h2>
 <p style="color:grey;font-size:70%;"> (Singla and Feizi, 2021, ICML) </p>
-Skew orthogonal convolutions (SOC) use an exponential convolution[^exconv] in order to obtain a 1-Lipschitz layer:
+*Skew orthogonal convolutions* (**SOC**) use an exponential convolution[^exconv] in order to obtain a 1-Lipschitz layer:
 Given a kernel \\(K\\), the exponential convolution can be defined as
 
 $$ \exp(K)(x) = x + \frac{K \ast x}{1} + \frac{K \ast^2 x}{2!} + \dots + \frac{K \ast^t x}{t!} + \dots, $$
@@ -102,12 +102,10 @@ and L is normalized to have unitary spectral norm.
 <h2 style="display:inline;">AOL</h2>
 <p style="color:grey;font-size:70%;"> (Prach and Lampert, 2022, ECCV) </p>
   
-We introduced Almost Orthogonal Lipschitz (AOL) as a rescaling method that guarantees a layer to be 1-Lipschitz.
+We introduced *Almost Orthogonal Lipschitz* (**AOL**) as a rescaling method that guarantees a layer to be 1-Lipschitz.
 For a fully connected layer with a parameter matrix \\(P\\), we define a diagonal rescaling matrix \\(D\\) with 
 
 $$ D_{ii} = \big( \sum_j |P^\top P|_{ij} \big)^{-1/2}. $$
-
-\\[ D_{ii} = \big( \sum_j |P^\top P|_{ij} \big)^{-1/2}. \\]
 
 With this choice of \\(D\\), we show that the spectral norm of \\( PD \\) is bounded by 1,
 which implies that the the linear given by \\( l(x)=PDx + b \\) is 1-Lipschitz.
@@ -125,6 +123,7 @@ the matrix \\(Q = V (V^\top V)^{-1/2}\\) is orthogonal.
 In order to evaluate this term, an iterative *Newton Method* is used to evaluate the inverse square root.
 Like Cayley convolutions, LOT parameterize 1-Lipschitz convolutions by evaluating them in the Fourier domain.
 
+
 <h2 style="display:inline;">CPL</h2>
 <p style="color:grey;font-size:70%;"> (Meunier et al., 2022, ICML) </p>
 For a parameter matrix \\(P\\) and a non-decreasing 1-Lipschitz function \\(\sigma\\) (usually ReLU), 
@@ -141,7 +140,26 @@ The *SDP-based Lipschitz Layer* (**SLL**) combines the CPL with the bound on the
 The layer can be written as
 
 $$ l(x) = x - 2 W^\top Q^{-2} D^2 \sigma(Wx + b), $$
+
 where \\(Q\\) is a diagonal parameter metrix with positive entries and \\(D\\) is the AOL rescaling applied to \\(P=W^\top Q^{-1}\\).
+
+
+Comparing 1-Lipschitz Convolutions
+======
+
+Theoretical
+------
+In our paper we did a theoretical comparison of different methods, considering the computational complexity and memory requirements of different methods.
+Our main findings where
+- Doing a forward pass with any of the methods is at most a costant factor worse that doing a forward pass with a standard convolution.
+- However, apart from CPL and SOC, all methods require some preprocessing of the parameters (e.g. orthogonalization), that usually scales like \\(c^3\\), for \\(c\\) the number of channels.
+- Methods Cayley and LOT require preprocessing that furthermore depend on the input size, making those methods hard to scale to larger input sizes.
+- In terms of memory required, again Cayley and LOT scale much worse with input size.
+
+Empirical
+------
+
+
 
 ### Citation
 The layers were introduced in the following papers:
