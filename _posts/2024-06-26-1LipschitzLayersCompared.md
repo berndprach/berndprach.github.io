@@ -35,7 +35,7 @@ However, the existence of adversarial examples could also lead to some problems,
 In order to create classifiers that are **guaranteed** to be free of adversarial examples,
 many recent works have proposed methods of parameterizing 1-Lipschitz networks.
 
-We call a function, a layer or a network 1-Lipschitz if the difference of two outputs is at most as big as the difference of the corresponding two inputs, or mathematically:
+We call a function, a layer or a network <ins>1-Lipschitz</ins> if the difference of two outputs is at most as big as the difference of the corresponding two inputs, or mathematically:
 
 $$ ||f(x) - f(y)||_2 \le ||x - y||_2 $$
 
@@ -60,7 +60,7 @@ We will introduce 7 methods of creating 1-Lipschitz convolutions from the litera
 
 
 <h2 style="display:inline;">BCOP</h2>
-<p style="color:grey;font-size:70%;"> (Q. Li et al., 2019, NeurIPS) </p>
+<p style="color:grey;font-size:70%;"> (Li et al., 2019, NeurIPS) </p>
 The methods BCOP (Block Orthogonal Convolution Parameterization) constructs the kernel of a \\( k \times k \\) convolution
 from a set of \\( (2k − 1) \\) parameter matrices. 
 Each of these matrices is orthogonalized using an algorithm by Bjorck & Bowie[^BnB].
@@ -85,7 +85,7 @@ $$ Q = (I-A) (I+A)^{-1}. $$
 
 <h2 style="display:inline;">SOC</h2>
 <p style="color:grey;font-size:70%;"> (Singla and Feizi, 2021, ICML) </p>
-Skew orthogonal convolutions (SOC) use an exponential convolution[\exc] in order to obtain a 1-Lipschitz layer:
+Skew orthogonal convolutions (SOC) use an exponential convolution[^exconv] in order to obtain a 1-Lipschitz layer:
 Given a kernel \\(K\\), the exponential convolution can be defined as
 
 $$ \exp(K)(x) = x + \frac{K \ast x}{1} + \frac{K \ast^2 x}{2!} + \dots + \frac{K \ast^t x}{t!} + \dots, $$
@@ -96,7 +96,7 @@ providing a way of parameterizing 1-Lipschitz layers.
 In their work, the sum of the infinite series is approximated by computing only the first 5 terms during training and the first 12 terms during the inference, 
 and L is normalized to have unitary spectral norm.
 
-[^exc]: Hoogeboom et al., 2020, The convolution exponential and generalized Sylvester flows.
+[^exconv]: Hoogeboom et al., 2020, The convolution exponential and generalized Sylvester flows.
 
 
 <h2 style="display:inline;">AOL</h2>
@@ -107,6 +107,8 @@ For a fully connected layer with a parameter matrix \\(P\\), we define a diagona
 
 $$ D_{ii} = \big( \sum_j |P^\top P|_{ij} \big)^{-1/2}. $$
 
+\\[ D_{ii} = \big( \sum_j |P^\top P|_{ij} \big)^{-1/2}. \\]
+
 With this choice of \\(D\\), we show that the spectral norm of \\( PD \\) is bounded by 1,
 which implies that the the linear given by \\( l(x)=PDx + b \\) is 1-Lipschitz.
 
@@ -116,6 +118,30 @@ We show how to efficiently evaluate the rescaling (or more precisely an upper bo
 expressing the entries of \\( J^\top J \\) explicitely in terms of the kernel values.
 
 
+<h2 style="display:inline;">LOT</h2>
+<p style="color:grey;font-size:70%;"> (Xu et al., 2022, NeurIPS) </p>
+*Layer-wise orthogonal training* (**LOT**), relies on the fact that for any parameter matrix \\(V\\),
+the matrix \\(Q = V (V^\top V)^{-1/2}\\) is orthogonal. 
+In order to evaluate this term, an iterative *Newton Method* is used to evaluate the inverse square root.
+Like Cayley convolutions, LOT parameterize 1-Lipschitz convolutions by evaluating them in the Fourier domain.
+
+<h2 style="display:inline;">CPL</h2>
+<p style="color:grey;font-size:70%;"> (Meunier et al., 2022, ICML) </p>
+For a parameter matrix \\(P\\) and a non-decreasing 1-Lipschitz function \\(\sigma\\) (usually ReLU), 
+the *Convex Potential Layer* (**CPL**) is defined as
+
+$$ l(x) = x - \frac{2}{||W||_2^2} W^\top \sigma(Wx+b). $$
+
+The spectral norm required to calculate \\(l(x)\\) is approximated using the (convolutional) power method.
+
+
+<h2 style="display:inline;">SLL</h2>
+<p style="color:grey;font-size:70%;"> (Araujo et al., 2023, ICLR) </p>
+The *SDP-based Lipschitz Layer* (**SLL**) combines the CPL with the bound on the spectral norm from AOL.
+The layer can be written as
+
+$$ l(x) = x - 2 W^\top Q^{-2} D^2 \sigma(Wx + b), $$
+where \\(Q\\) is a diagonal parameter metrix with positive entries and \\(D\\) is the AOL rescaling applied to \\(P=W^\top Q^{-1}\\).
 
 ### Citation
 The layers were introduced in the following papers:
