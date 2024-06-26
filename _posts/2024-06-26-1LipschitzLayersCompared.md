@@ -18,8 +18,9 @@ Why 1-Lipschitz networks?
 ======
 
 Current image classification models are not robust! 
-Tiny, invisible perturbations of the input, known as adversarial examples[^AE], can change the predictions of the models.
-[^AE]: Szegedy et al. 2014; Goodfellow, Shlens, and Szegedy 2015
+Tiny, invisible perturbations of the input, known as adversarial examples[^ae], can change the predictions of the models.
+
+[^ae]: Szegedy et al. 2014; Goodfellow, Shlens, and Szegedy 2015
 
 <img src="/images/blog-posts/adv_panda.png" alt="Adversarial Panda" width="600"/>
 <p style="color:grey;font-size:70%;"> (Szegedy et al. 2014; Goodfellow, Shlens, and Szegedy 2015) </p>
@@ -78,7 +79,7 @@ expressing the entries of \\( J^\top J \\) explicitely in terms of the kernel va
 <p style="color:grey;font-size:70%;"> (Q. Li et al., 2019, NeurIPS) </p>
 The methods BCOP (Block Orthogonal Convolution Parameterization) constructs the kernel of a \\( k \times k \\) convolution
 from a set of \\( (2k − 1) \\) parameter matrices. 
-Each of these matrices is orthogonalized using an algorithm by Bjorck & Bowie[^BnB]
+Each of these matrices is orthogonalized using an algorithm by Bjorck & Bowie[^BnB].
 Then, a \\( k \times k \\) kernel is constructed from those matrices in a
 way that guarantees that the resulting layer is orthogonal.
 
