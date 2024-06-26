@@ -184,3 +184,5 @@ One commonality between well performing methods that we have found is that they 
 Please find more information and further details in our paper 
 [“1-Lipschitz Layers Compared: Memory, Speed and Certifiable Robustness”](https://berndprach.github.io/publication/1LipschitzLayersCompared)
 
+<img src="/images/star_plot_line.png" alt="Radar plot of results" width="1200"/>
+
