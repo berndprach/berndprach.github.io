@@ -57,29 +57,30 @@ However, it is a bit more tricky to create 1-Lipschitz convolutions. For example
 
 We will introduce 7 methods of creating 1-Lipschitz convolutions from the literature:
 
-
-
-## AOL (Prach and Lampert, 2022, ECCV)
-<p style="color:grey;font-size:70%;"> (Prach and Lampert, 2022, ECCV) </p>
-
-<span style="font-size: 200%;">**AOL**</span> <span style="font-size: 50%;">(Prach and Lampert, 2022, ECCV)</span>
-
 <h2 style="display:inline;">AOL</h2>
 <p style="color:grey;font-size:70%;"> (Prach and Lampert, 2022, ECCV) </p>
   
 We introduced Almost Orthogonal Lipschitz (AOL) as a rescaling method that guarantees a layer to be 1-Lipschitz.
-For a fully connected layer with a parameter matrix P, we define a diagonal rescaling matrix D with 
+For a fully connected layer with a parameter matrix \\(P\\), we define a diagonal rescaling matrix \\(D\\) with 
 
-$$ D_ii = \big( \sum_j |P^\top P|_{ij} \big)^{-1/2}. $$
+$$ D_{ii} = \big( \sum_j |P^\top P|_{ij} \big)^{-1/2}. $$
 
-With this choice of D, we show that the spectral norm of \\( PD \\) is bounded by 1,
+With this choice of \\(D\\), we show that the spectral norm of \\( PD \\) is bounded by 1,
 which implies that the the linear given by \\( l(x)=PDx + b \\) is 1-Lipschitz.
 
-We can also apply this rescaling to a convolution. In order to do this we need to consider the Jacobian J of the
-convolution (instead of P) in the equation above.
+We can also apply this rescaling to a convolution. In order to do this we need to consider the Jacobian \\(J\\) of the
+convolution (instead of \\(P\\)) in the equation above.
 We show how to efficiently evaluate the rescaling (or more precisely an upper bound of it) by
 expressing the entries of \\( J^\top J \\) explicitely in terms of the kernel values.
 
+<h2 style="display:inline;">BCOP</h2>
+<p style="color:grey;font-size:70%;"> (Q. Li et al., 2019, NeurIPS) </p>
+The methods BCOP (Block Orthogonal Convolution Parameterization) constructs the kernel of a \\( k \times k \\) convolution
+from a set of \\( (2k − 1) \\) parameter matrices. 
+Each of these matrices is orthogonalized using an algorithm by Bjorck & Bowie
+<p style="color:grey;font-size:70%;"> (&#197;. Bj&ouml;rck and C. Bowie, 1971, SIAM Journal on Numerical Analysis) </p>
+Then, a \\( k \times k \\) kernel is constructed from those matrices in a
+way that guarantees that the resulting layer is orthogonal.
 
 ### Citation
 The layers were introduced in the following papers:
