@@ -14,8 +14,6 @@ In our recent CVPR paper,
 we compared different methods of creating 1-Lipschitz convolutions.
 In this blog post we try to give some additional background on why 1-Lipschitz methods are an interesting research topic, and discuss some results from the paper.
 
-**This post is currently work in progress!**
-
 Why 1-Lipschitz networks?
 ======
 
@@ -24,7 +22,7 @@ Tiny, invisible perturbations of the input, known as adversarial examples[^ae], 
 
 [^ae]: Szegedy et al. 2014; Goodfellow, Shlens, and Szegedy 2015
 
-<img src="/images/blog-posts/adv_panda.png" alt="Adversarial Panda" width="600"/>
+<img src="/images/blog-posts/adv_panda.png" alt="Adversarial Panda" width="400"/>
 
 We study adversarial example mostly to learn more about neural networks,
 and potentlially build models that e.g. generalize better in the future.
@@ -49,7 +47,7 @@ Once we know how to build 1-Lipschitz layers, we can simply construct 1-Lipschit
 When classifying an image using a 1-Lipschitz network, by construction, any perturbation of the input image can change the output of the network by at most the same amount. 
 Therefore, if the difference of the larges 2 class scores of the original image is large enough, 
 we can be sure that no perturbation of certain magnitude can change the order of outputs, and therefore the prediction of the model.
-<img src="/images/blog-posts/ls_margin.png" alt="Robust Classification" width="600"/>
+<img src="/images/blog-posts/ls_margin.png" alt="Robust Classification" width="400"/>
 
 
 Existing 1-Lipschitz Convolutions
