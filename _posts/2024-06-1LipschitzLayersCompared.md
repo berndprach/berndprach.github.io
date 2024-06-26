@@ -1,7 +1,7 @@
 ---
 title: '1-Lipschitz Layer Compared'
 date: 2024-06-26
-permalink: /posts/2024/06/1-LipschitzLayersCompared/
+permalink: /blog-posts/2024/06/1-LipschitzLayersCompared/
 tags:
   - 1-Lipschitz
   - Certified Robust Classification
