@@ -10,8 +10,8 @@ tags:
 <img src="/images/star_plot_line.png" alt="Radar plot of results" width="1200"/>
 
 In our recent CVPR paper, 
-[https://berndprach.github.io/publication/1LipschitzLayersCompared](“1-Lipschitz Layers Compared: Memory, Speed and Certifiable Robustness”)
- we compared different methods of creating 1-Lipschitz convolutions.
+[“1-Lipschitz Layers Compared: Memory, Speed and Certifiable Robustness”](https://berndprach.github.io/publication/1LipschitzLayersCompared)
+we compared different methods of creating 1-Lipschitz convolutions.
 In this blog post we try to give some additional background on why 1-Lipschitz methods are an interesting research topic, and discuss some results from the paper.
 
 **This post is currently work in progress!**
@@ -184,21 +184,5 @@ Based on our results, we believe CPL is the most promising method for creating c
 One commonality between well performing methods that we have found is that they all either include some sort of skip connection (CPL, SLL and SOC) or initialize layers as the identity map (like AOL and LOT). We also found that as expected, doing computations on the kernel instead of on the full input is an advantage when scaling up methods to larger input resolutions. Interestingly, we did not find a large difference between layers that strictly enforce orthogonality and more general ones. Furthermore, slower methods did not seem to perform worse than faster ones; with SOC and LOT two relative slow methods are among the best ones
   
 Please find more information and further details in our paper 
-[https://berndprach.github.io/publication/1LipschitzLayersCompared](“1-Lipschitz Layers Compared: Memory, Speed and Certifiable Robustness”)
-
-### Citation
-The layers were introduced in the following papers:
-- **[AOL]** (Prach and Lampert, 2022, ECCV)
-- **[BCOP]** Q. Li et al., 2019, NeurIPS; 
-- **[CPL]** Meunier et al., 2022, ICML;
-- **[Cayley]** Trockman and Kolter, 2021, ICLR; 
-- **[LOT]** Xu, L. Li, and B. Li, 2022, NeurIPS; 
-- **[SLL]** Araujo et al., 2023, ICLR;
-- **[SOC]** Singla and Feizi, 2021, ICML;
-
-Comparison
-======
-
-Theoretical
-------
+[“1-Lipschitz Layers Compared: Memory, Speed and Certifiable Robustness”](https://berndprach.github.io/publication/1LipschitzLayersCompared)
 
