@@ -16,8 +16,8 @@ Why 1-Lipschitz networks?
 Current image classification models are not robust! 
 Tiny, invisible perturbations of the input, known as adversarial examples, can change the predictions of the models.
 
-<img src="/images/blog-posts/adv_panda.png" alt="Adversarial Panda" width="1200"/>
-(Szegedy et al. 2014; Goodfellow, Shlens, and Szegedy 2015)
+<img src="/images/blog-posts/adv_panda.png" alt="Adversarial Panda" width="600"/>
+<p style="color:blue;font-size:30%;"> (Szegedy et al. 2014; Goodfellow, Shlens, and Szegedy 2015) </p>
 
 We study adversarial example mostly to learn more about neural networks,
 and potentlially build models that e.g. generalize better in the future.
@@ -40,7 +40,7 @@ Once we know how to build 1-Lipschitz layers, we can simply construct 1-Lipschit
 When classifying an image using a 1-Lipschitz network, by construction, any perturbation of the input image can change the output of the network by at most the same amount. 
 Therefore, if the difference of the larges 2 class scores of the original image is large enough, 
 we can be sure that no perturbation of certain magnitude can change the order of outputs, and therefore the prediction of the model.
-<img src="/images/blog-posts/ls_margin.png" alt="Robust Classification" width="1200"/>
+<img src="/images/blog-posts/ls_margin.png" alt="Robust Classification" width="600"/>
 
 
 Comparison
