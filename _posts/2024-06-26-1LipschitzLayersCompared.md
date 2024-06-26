@@ -17,7 +17,7 @@ Current image classification models are not robust!
 Tiny, invisible perturbations of the input, known as adversarial examples, can change the predictions of the models.
 
 <img src="/images/blog-posts/adv_panda.png" alt="Adversarial Panda" width="600"/>
-<p style="color:blue;font-size:30%;"> (Szegedy et al. 2014; Goodfellow, Shlens, and Szegedy 2015) </p>
+<p style="color:grey;font-size:70%;"> (Szegedy et al. 2014; Goodfellow, Shlens, and Szegedy 2015) </p>
 
 We study adversarial example mostly to learn more about neural networks,
 and potentlially build models that e.g. generalize better in the future.
@@ -31,7 +31,9 @@ In order to create classifiers that are **guaranteed** to be free of adversarial
 many recent works have proposed methods of parameterizing 1-Lipschitz networks.
 
 We call a function, a layer or a network 1-Lipschitz if the difference of two outputs is at most as big as the difference of the corresponding two inputs, or mathematically:
-$$ \|f(x) - f(y)\|_2 \le \|x - y\|_2 $$
+
+$$ ||f(x) - f(y)||_2 \le ||x - y||_2 $$
+
 for all inputs x and y.
 
 Once we know how to build 1-Lipschitz layers, we can simply construct 1-Lipschitz networks by stacking multiple of those layers.
