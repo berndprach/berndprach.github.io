@@ -23,7 +23,6 @@ Tiny, invisible perturbations of the input, known as adversarial examples[^ae], 
 [^ae]: Szegedy et al. 2014; Goodfellow, Shlens, and Szegedy 2015
 
 <img src="/images/blog-posts/adv_panda.png" alt="Adversarial Panda" width="600"/>
-<p style="color:grey;font-size:70%;"> (Szegedy et al. 2014; Goodfellow, Shlens, and Szegedy 2015) </p>
 
 We study adversarial example mostly to learn more about neural networks,
 and potentlially build models that e.g. generalize better in the future.
@@ -59,6 +58,30 @@ However, it is a bit more tricky to create 1-Lipschitz convolutions. For example
 
 We will introduce 7 methods of creating 1-Lipschitz convolutions from the literature:
 
+
+<h2 style="display:inline;">BCOP</h2>
+<p style="color:grey;font-size:70%;"> (Q. Li et al., 2019, NeurIPS) </p>
+The methods BCOP (Block Orthogonal Convolution Parameterization) constructs the kernel of a \\( k \times k \\) convolution
+from a set of \\( (2k − 1) \\) parameter matrices. 
+Each of these matrices is orthogonalized using an algorithm by Bjorck & Bowie[^BnB].
+Then, a \\( k \times k \\) kernel is constructed from those matrices in a
+way that guarantees that the resulting layer is orthogonal.
+
+[^BnB]: &#197;. Bj&ouml;rck and C. Bowie, 1971, SIAM Journal on Numerical Analysis
+
+
+<h2 style="display:inline;">Cayley</h2>
+<p style="color:grey;font-size:70%;"> (Trockman and Kolter, 2021, ICLR) </p>
+
+Cayley Convolutions make use of the fact that circular padded convolutions are vector-matrix products in the Fourier domain.
+As long as all those vector-matrix products have orthogonal matrices, the full convolution will have an orthogonal Jacobian.
+The orthogonal matrices used in this are parameterized using the Cayely Transform[^Cayley]:
+For any skew-symmetric matrix \\(A\\) the matrix \\(Q\\) is orthogonal, where \\(Q\\) is defined as
+
+$$ Q = (I-A) (I+A)^{-1}. $$
+
+[^Caylay]: Arthur Cayley, 1846, Journal fur die reine und angewandte Mathematik
+
 <h2 style="display:inline;">AOL</h2>
 <p style="color:grey;font-size:70%;"> (Prach and Lampert, 2022, ECCV) </p>
   
@@ -75,18 +98,7 @@ convolution (instead of \\(P\\)) in the equation above.
 We show how to efficiently evaluate the rescaling (or more precisely an upper bound of it) by
 expressing the entries of \\( J^\top J \\) explicitely in terms of the kernel values.
 
-<h2 style="display:inline;">BCOP</h2>
-<p style="color:grey;font-size:70%;"> (Q. Li et al., 2019, NeurIPS) </p>
-The methods BCOP (Block Orthogonal Convolution Parameterization) constructs the kernel of a \\( k \times k \\) convolution
-from a set of \\( (2k − 1) \\) parameter matrices. 
-Each of these matrices is orthogonalized using an algorithm by Bjorck & Bowie[^BnB].
-Then, a \\( k \times k \\) kernel is constructed from those matrices in a
-way that guarantees that the resulting layer is orthogonal.
 
-[^BnB]: &#197;. Bj&ouml;rck and C. Bowie, 1971, SIAM Journal on Numerical Analysis
-
-END
-<p style="color:grey;font-size:70%;"> [1] (&#197;. Bj&ouml;rck and C. Bowie, 1971, SIAM Journal on Numerical Analysis) </p>
 
 ### Citation
 The layers were introduced in the following papers:
