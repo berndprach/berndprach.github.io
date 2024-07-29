@@ -18,7 +18,7 @@ paperurl: 'https://arxiv.org/pdf/2311.16833'
 - [ArXiv](https://arxiv.org/abs/2311.16833)
 - [Video](https://www.youtube.com/watch?v=5l0kkrAMqDg)
 - [Poster](https://drive.google.com/file/d/1774juF7XtxgJTUi8g0a8B8sH8AuSvRj7/view?usp=sharing)
-- [Simplified Code](https://github.com/berndprach/OneLipschitzLayersCompared) (work in progress)
+- [Simplified Code](https://github.com/berndprach/OneLipschitzLayersCompared)
 - [Original Code](https://github.com/berndprach/1LipschitzLayersCompared)
 - [Blog Post](https://berndprach.github.io/blog-posts/2024/06/1-LipschitzLayersCompared)
 - [Fabio's webpage](https://fabiobrau.github.io/)
