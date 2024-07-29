@@ -20,8 +20,3 @@ Find me on
 [LinkedIn](https://www.linkedin.com/in/bernd-prach) and
 [YouTube](http://www.youtube.com/@berndprach).
 
-
-## News:
-Join us at the Institute of Science and Technology Austria (ISTA) for an exciting symposium on 
-"[The Future of Machine Learning](https://sites.google.com/view/future-of-ml-ista)" 
-on July 19, 2024, two before days ICML 2024, which takes place in Vienna as well!
