@@ -19,6 +19,7 @@ Why 1-Lipschitz networks?
 
 Current image classification models are not robust! 
 Tiny, invisible perturbations of the input, known as adversarial examples[^ae], can change the predictions of the models.
+For example, image classification models give very different predictions for the two images below, whilst the images look identical to humans. 
 
 [^ae]: Szegedy et al. 2014; Goodfellow, Shlens, and Szegedy 2015
 
@@ -34,8 +35,9 @@ However, the existence of adversarial examples could also lead to some problems,
 
 In order to create classifiers that are **guaranteed** to be free of adversarial examples,
 many recent works have proposed methods of parameterizing 1-Lipschitz networks.
+These networks have the property that they can only move inputs closer togethre, and never further apart.
 
-We call a function, a layer or a network <ins>1-Lipschitz</ins> if the difference of two outputs is at most as big as the difference of the corresponding two inputs, or mathematically:
+Mathematically, we call a function, a layer or a network <ins>1-Lipschitz</ins> if the difference of two outputs is at most as big as the difference of the corresponding two inputs:
 
 $$ ||f(x) - f(y)||_2 \le ||x - y||_2 $$
 
@@ -92,7 +94,7 @@ Given a kernel \\(K\\), the exponential convolution can be defined as
 $$ \exp(K)(x) = x + \frac{K \ast x}{1} + \frac{K \ast^2 x}{2!} + \dots + \frac{K \ast^t x}{t!} + \dots, $$
 
 where \\(\ast^t\\) denotes a convolution applied \\(t\\) times.
-The authors proved that any exponential convolution has an orthogonal Jacobian matrix as long as L is skew-symmetric,
+The authors proved that any exponential convolution has an orthogonal Jacobian matrix as long as \\(K\\) is skew-symmetric,
 providing a way of parameterizing 1-Lipschitz layers. 
 In their work, the sum of the infinite series is approximated by computing only the first 5 terms during training and the first 12 terms during the inference, 
 and L is normalized to have unitary spectral norm.
